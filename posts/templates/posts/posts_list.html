@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Posts
+{% endblock %}
+
+{% block content %}
+<section class="posts-section">
+    <h1 class="posts-title">Django Blog</h1>
+
+   
+    <form method="GET" action="" class="filter-form">
+        <div class="filter-group">
+            <label for="author-filter" class="filter-label">Author</label>
+            <select name="author" id="author-filter" class="filter-select">
+                <option value="">Filter by Author</option>
+                {% for user in authors %}
+                <option value="{{ user.id }}" {% if request.GET.author == user.id|stringformat:"s" %}selected{% endif %}>
+                    {{ user.username }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="date-filter" class="filter-label">Date</label>
+            <select name="date" id="date-filter" class="filter-select">
+                <option value="">Filter by Date</option>
+                <option value="asc" {% if request.GET.date == 'asc' %}selected{% endif %}>Oldest First</option>
+                <option value="desc" {% if request.GET.date == 'desc' %}selected{% endif %}>Newest First</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="search-filter" class="filter-label">Search</label>
+            <input type="text" name="search" id="search-filter" placeholder="Search by Title" class="filter-input" value="{{ request.GET.search }}">
+        </div>
+
+        <button type="submit" class="filter-button">Filter</button>
+    </form>
+
+  
+    <div class="posts-list">
+        {% for post in posts %}
+        <article class="post-card">
+            <h2 class="post-title"><a href="{% url 'posts:page' slug=post.slug %}" class="post-link">{{ post.title }}</a></h2>
+            <p class="post-meta">{{ post.created_at }} by <span class="post-author">{{ post.author }}</span></p>
+            <p class="post-content">{{ post.content }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;   
+    background-color: black;
+    color: black;
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 5rem;
+    color: rebeccapurple;
+}
+.post p {
+    color: whitesmoke;
+}
+nav{
+    padding:1rem;
+    background-color: seagreen;
+    color: white;
+    font-size: 2.5rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner{
+    display: block;
+    width: 200px;
+}
+
+/* Styles de base pour le formulaire */
+.form-with-validation {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styles pour les champs de formulaire avec une bordure rouge (erreur) */
+.form-control.error {
+    border-color: red;
+}
+
+/* Styles pour les messages d'erreur */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+button[type="submit"] {
+    width: 20%;
+    margin: auto;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+/* Post List html style */
+
+/* Posts Section */
+.posts-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff00;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.posts-title {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffdede;
+}
+
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-group {
+    flex: 1 1 calc(33.333% - 10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.filter-select,
+.filter-input,
+.filter-button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.filter-select,
+.filter-input {
+    flex: 1;
+    background-color: #fff;
+}
+
+.filter-button {
+    background-color: #007BFF;
+    color: #fff;
+    width: 300px;
+    cursor: pointer;
+    flex: none;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+/* Post List */
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.post-link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-group {
+        flex: 1 1 100%;
+    }
+
+    .posts-section {
+        padding: 15px;
+    }
+}
+
+/* (single) Post Section */
+.post-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Post Card */
+.post-card {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.post-card-banner {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.post-card-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.post-card-content {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Back Button */
+.post-back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-back-button:hover {
+    background-color: #0056b3;
+}
+
+.post-back-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.post-back-link:hover {
+    text-decoration: underline;
+}
